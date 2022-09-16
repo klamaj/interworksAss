@@ -1,0 +1,8 @@
+# dotnet
+obj
+bin
+
+# db
+*.db-shm
+*.db-wal
+*.db
