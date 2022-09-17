@@ -1,0 +1,32 @@
+[
+    {
+        "PromotionId" : 1,
+        "OfferType" : 2,
+        "PromotionOffer" : 8,
+        "OrderId" : 1
+    },
+    {
+        "PromotionId" : 2,
+        "OfferType" : 2,
+        "PromotionOffer" : 8,
+        "OrderId" : 2
+    },
+    {
+        "PromotionId" : 3,
+        "OfferType" : 2,
+        "PromotionOffer" : 8,
+        "OrderId" : 3
+    },
+    {
+        "PromotionId" : 4,
+        "OfferType" : 2,
+        "PromotionOffer" : 8,
+        "OrderId" : 4
+    },
+    {
+        "PromotionId" : 5,
+        "OfferType" : 2,
+        "PromotionOffer" : 8,
+        "OrderId" : 5
+    }
+]

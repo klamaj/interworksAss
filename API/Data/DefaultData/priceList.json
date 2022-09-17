@@ -1,0 +1,32 @@
+[
+    {
+        "PriceListId" : 1,
+        "OfferType" : 1,
+        "PriceListOffer" : 5,
+        "OrderId" : 1
+    },
+    {
+        "PriceListId" : 2,
+        "OfferType" : 2,
+        "PriceListOffer" : 10,
+        "OrderId" : 2
+    },
+    {
+        "PriceListId" : 3,
+        "OfferType" : 1,
+        "PriceListOffer" : 3,
+        "OrderId" : 3
+    },
+    {
+        "PriceListId" : 4,
+        "OfferType" : 1,
+        "PriceListOffer" : 20,
+        "OrderId" : 4
+    },
+    {
+        "PriceListId" : 5,
+        "OfferType" : 2,
+        "PriceListOffer" : 5,
+        "OrderId" : 5
+    }
+]

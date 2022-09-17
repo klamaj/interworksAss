@@ -1,0 +1,32 @@
+[
+    {
+        "CouponId" : 1,
+        "OfferType" : 1,
+        "CouponOffer" : 10,
+        "OrderId" : 1
+    },
+    {
+        "CouponId" : 2,
+        "OfferType" : 2,
+        "CouponOffer" : 10,
+        "OrderId" : 2
+    },
+    {
+        "CouponId" : 3,
+        "OfferType" : 1,
+        "CouponOffer" : 10,
+        "OrderId" : 3
+    },
+    {
+        "CouponId" : 4,
+        "OfferType" : 1,
+        "CouponOffer" : 10,
+        "OrderId" : 4
+    },
+    {
+        "CouponId" : 5,
+        "OfferType" : 2,
+        "CouponOffer" : 10,
+        "OrderId" : 5
+    }
+]
