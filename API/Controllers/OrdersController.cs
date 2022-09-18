@@ -1,7 +1,6 @@
 using API.Data;
 using API.DTOs;
 using API.Interfaces;
-using API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,20 +33,34 @@ public class OrdersController : ControllerBase
             ord.OrderTotal = item.OrderTotal;
             ord.OrderId = item.OrderId;
 
+            var price = item.OrderTotal;
+
             var priceList = await _offer.GetPriceListOffer(item.OrderId);
             var promotion = await _offer.GetPromotionOffer(item.OrderId);
             var coupon = await _offer.GetCouponOffer(item.OrderId);
 
-            var calcPriceList = _offer.CalculateOffer(priceList, item.OrderTotal);
-            ord.PriceList = calcPriceList.CalculatedOffer;
+            if (priceList != null) 
+            {
+                var calcPriceList = _offer.CalculateOffer(priceList, price);
+                price = calcPriceList.CalculatedPrice;
+                ord.PriceList = calcPriceList.CalculatedOffer;
+            }
 
-            var calcPromotion = _offer.CalculateOffer(promotion, calcPriceList.CalculatedPrice);
-            ord.Promotion = calcPromotion.CalculatedOffer;
+            if (promotion != null)
+            {
+                var calcPromotion = _offer.CalculateOffer(promotion, price);
+                price = calcPromotion.CalculatedPrice;
+                ord.Promotion = calcPromotion.CalculatedOffer;
+            }
 
-            var calcCoupon = _offer.CalculateOffer(coupon, calcPromotion.CalculatedPrice);
-            ord.Coupon = calcCoupon.CalculatedOffer;
+            if (coupon != null)
+            {
+                var calcCoupon = _offer.CalculateOffer(coupon, price);
+                price = calcCoupon.CalculatedPrice;
+                ord.Coupon = calcCoupon.CalculatedOffer;
+            }
 
-            ord.FinalPrice = calcCoupon.CalculatedPrice;
+            ord.FinalPrice = price;
 
             order.Add(ord);
         }

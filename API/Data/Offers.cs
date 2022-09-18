@@ -40,6 +40,9 @@ public class Offers : IOffers
     public async Task<OfferDto> GetCouponOffer(int id)
     {
         var data = await _context.Coupons.FirstOrDefaultAsync(c => c.OrderId == id);
+
+        if(data is null) return null;
+
         return new OfferDto
         {
             OfferType = data.OfferType,
@@ -50,6 +53,9 @@ public class Offers : IOffers
     public async Task<OfferDto> GetPriceListOffer(int id)
     {
         var data = await _context.PriceLists.FirstOrDefaultAsync(p => p.OrderId == id);
+
+        if (data is null) return null;
+
         return new OfferDto
         {
             OfferType = data.OfferType,
@@ -60,6 +66,9 @@ public class Offers : IOffers
     public async Task<OfferDto> GetPromotionOffer(int id)
     {
         var data = await _context.Promotions.FirstOrDefaultAsync(p => p.OrderId == id);
+        
+        if (data is null) return null;
+
         return new OfferDto
         {
             OfferType = data.OfferType,

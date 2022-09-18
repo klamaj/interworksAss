@@ -22,11 +22,5 @@
         "OfferType" : 1,
         "CouponOffer" : 10,
         "OrderId" : 4
-    },
-    {
-        "CouponId" : 5,
-        "OfferType" : 2,
-        "CouponOffer" : 10,
-        "OrderId" : 5
     }
 ]
