@@ -6,9 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
-[ApiController]
-[Route("api/v1.0/[controller]")]
-public class OrdersController : ControllerBase
+public class OrdersController : BaseApiController
 {
     private readonly DatabaseContext _context;
     private readonly IOffers _offer;

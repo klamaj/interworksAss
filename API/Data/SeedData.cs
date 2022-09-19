@@ -1,10 +1,13 @@
 using System.Text.Json;
 using API.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.Data;
 
 public class SeedData
 {
+    // Data
     public static async Task AddDefaultData(DatabaseContext context)
     {
         try
@@ -77,5 +80,19 @@ public class SeedData
         {
             throw new Exception(e.ToString());
         }
+    }
+
+    // Users
+    public static async Task AddDefaultUser(UserManager<User> userManager)
+    {
+        if (await userManager.Users.AnyAsync()) return;
+
+        var user = new User()
+        {
+            UserName = "test@test.gr",
+            Email = "test@test.gr"
+        };
+
+        await userManager.CreateAsync(user, "12345678Aa");
     }
 }
